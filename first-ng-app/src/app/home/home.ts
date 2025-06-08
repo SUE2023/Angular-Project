@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { Greeting } from '../components/greeting/greeting';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Greeting],
   template: `
-    <p>
-      home works!
-    </p>
+    <p>home works!</p>
+    <app-greeting></app-greeting>
   `,
   styles: ``
 })
