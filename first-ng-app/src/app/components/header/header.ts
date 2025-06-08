@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <header>
     	<nav>
-		My first Angular App
+		<p>{{ title() }}</p>
 	</nav>
     </header>
   `,
@@ -24,5 +24,6 @@ import { Component } from '@angular/core';
   `]
 })
 export class Header {
+	title = signal('My first Angular App');
 
 }
