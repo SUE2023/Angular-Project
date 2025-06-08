@@ -8,16 +8,17 @@ import { Home } from './/home/home';
   standalone: true,
   imports: [RouterOutlet, Header, Home],
   template: `
-    <app-header/>
+    <app-header></app-header>
     <main>
-    	<app-home/>
+      <app-home></app-home>
+      <router-outlet></router-outlet>
     </main>
   `,
-  styles: ['
-	  main {
-		  padding-inline: 16px;
-	  }
-	  '],
+  styles: [`
+    main {
+      padding-inline: 16px;
+    }
+  `],
 })
 export class App {
   protected title = 'first-ng-app';
