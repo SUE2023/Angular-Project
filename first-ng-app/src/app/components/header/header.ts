@@ -1,12 +1,16 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   template: `
     <header>
     	<nav>
-		<p>{{ title() }}</p>
+		<span routerLink = "/">{{ title() }}</span>
+		<ul>
+			<li routerLink = "/todos">Todos</li>
+		</ul>
 	</nav>
     </header>
   `,
@@ -20,6 +24,30 @@ import { Component, signal } from '@angular/core';
 		  align-items: center;
 		  justify-content: space-between;
 
+	  }
+	  nav {
+		  width: 100%;
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+
+		  >span {
+			  cursor: pointer;
+                                  &:hover {
+                                          color: #777;
+                                  }
+		  }
+
+		  ul {
+			  list-style: none;
+			  /* list-style-type: disc; */
+		  }
+			  li {
+				  cursor: pointer;
+				  &:hover {
+					  color: #777;
+				  }
+			  }
 	  }
   `]
 })
