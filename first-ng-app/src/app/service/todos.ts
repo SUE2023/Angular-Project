@@ -10,7 +10,7 @@ export class Todos {
 			title: 'groceries',
 			id: 0,
 			userId: 1,
-			completed: false;
+			completed: false,
 		},
 		{
 			title: 'jobsearch',
