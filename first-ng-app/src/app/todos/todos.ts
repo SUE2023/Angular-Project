@@ -18,7 +18,7 @@ export class Todos implements OnInit{
 
 	ngOnInit(): void{
 		console.log(this.todoService.todoItems);
-		this.todoItems.set(this.todService.todItems);
+		this.todoItems.set(this.todoService.todoItems);	
 	}
 
 }
