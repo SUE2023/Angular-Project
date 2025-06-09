@@ -14,7 +14,7 @@ export class Todos {
 		},
 		{
 			title: 'jobsearch',
-			id: 1;
+			id: 1,
 			userId: 1,
 			completed: false,
 		},
@@ -23,7 +23,7 @@ export class Todos {
 			id: 2,
 			userId: 1,
 			completed: false,
-		}.
+		}
 	];
 
   constructor() { }
