@@ -7,7 +7,7 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home').then((m) => m.Home),
   },
   {
-    path: 'todos',
-    loadComponent: () => import('./todos/todos').then((m) => m.Todos),
+    path: 'task-list',
+    loadComponent: () => import('./task-list/task-list').then((m) => m.TaskList),
   },
 ];
