@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
     	<nav>
 		<span routerLink = "/">{{ title() }}</span>
 		<ul>
-			<li routerLink = "/todos">Todos</li>
+			<li routerLink = "/task-list">TaskList</li>
 		</ul>
 	</nav>
     </header>
