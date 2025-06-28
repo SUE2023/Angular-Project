@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
-import { TodoService } from '../services/todo';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { Todos } from '../service/todos';
+import { Todo } from '../model/todo.type';
 
 @Component({
   selector: 'app-todos',
+  standalone: true,
   imports: [],
   template: `
-      @for(todo for todoItems(); track.id){
-	      <p>{{todo.title}}</p>
-      }
-    
+    <div *ngFor="let todo of todoItems()">
+      <p>{{ todo.title }}</p>
+    </div>
   `,
   styles: ``
 })
-export class Todos implements OnInit{
-	todoService = inject(TodoService);
-	todoItems = signal <Array<Todo>>([]);
+export class TodosComponent implements OnInit {
+  todo = inject(Todos);
+  todoItems = signal<Todo[]>([]);
 
-	ngOnInit(): void{
-		console.log(this.todoService.todoItems);
-		this.todoItems.set(this.todoService.todoItems);	
-	}
-
+  ngOnInit(): void {
+    const todos = this.todo.todoItems(); // unwrap signal
+    console.log(todos);
+    this.todoItems.set(todos);
+  }
 }
+
